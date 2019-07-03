@@ -1,0 +1,44 @@
+.text-definer {
+  @include text(24px, $black, bold);
+  line-height: 28px;
+}
+
+.text-button {
+  @include text(20px, $primary_blue, $transform: uppercase);
+  line-height: 24px;
+}
+
+.text-button-alt {
+  @include text(20px, $gray, $transform: uppercase);
+  line-height: 24px;
+}
+
+.text-selected {
+  @include text(20px, $black, bold);
+  line-height: 24px;
+}
+
+.text-disabled {
+  @include text(20px, $gray);
+  line-height: 24px;
+}
+
+.text-menu {
+  @include text(20px, $light_gray);
+  line-height: 24px;
+}
+
+.text-field {
+  @include text(20px, $black);
+  line-height: 24px;
+}
+
+.text-label, lable {
+  @include text(20px, $gray);
+  line-height: 24px;
+}
+
+.text-body {
+  @include text(16px, $body_black);
+  line-height: 19px;
+}

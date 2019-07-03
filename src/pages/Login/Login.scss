@@ -1,0 +1,81 @@
+.login {
+  margin-top: 100px;
+
+  &-logo {
+    max-width: 120px;
+  }
+
+  &-card {
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    margin: 0 auto;
+    max-width: 360px;
+    padding: 30px;
+
+    &-title {
+      margin: 0;
+      text-align: left;
+    }
+
+    &-body {
+      padding: 25px 0;
+
+      &-group {
+        margin-bottom: 25px;
+        text-align: left;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &-item {
+          display: flex;
+          margin-bottom: 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          input {
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 15px;
+            width: 100%;
+
+            &::placeholder {
+              color: #D8D8D8;
+            }
+          }
+        }
+      }
+    }
+
+    &-footer {
+      &-item {
+        margin-bottom: 25px;
+        text-align: right;
+
+        &:first-child {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .text-body {
+          cursor: pointer;
+        }
+
+        button:disabled, button[disabled] {
+          background-color: #A0A0A0;
+          border-color: #A0A0A0;
+          cursor: no-drop;
+        }
+      }
+    }
+  }
+}

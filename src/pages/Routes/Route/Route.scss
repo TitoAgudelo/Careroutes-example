@@ -1,0 +1,115 @@
+.section-route {
+  margin: 6rem 0;
+}
+
+.route-detail {
+  &-back {
+    cursor: pointer;
+  }
+
+  &-title {
+    color: #4E4E4E;
+    margin-bottom: 35px;
+  }
+
+  &-tabs {
+    display: flex;
+    margin-bottom: 35px;
+
+    &-tab {
+      color: #4E4E4E;
+      cursor: pointer;
+      font-size: 17px;
+      margin-right: 50px;
+      padding-bottom: 10px;
+      position: relative;
+
+      &:after {
+        background-color: #4E4E4E;
+        bottom: 0;
+        content: ' ';
+        display: none;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      &:hover, &.active {
+        font-weight: bold;
+
+        &:after {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &-body {
+    &-form {
+      border-top: 1px solid #D8D8D8;
+      max-width: 900px;
+
+      &-wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &-group {
+        border-bottom: 1px solid #D8D8D8;
+        color: #282828;
+        cursor: pointer;
+        padding: 35px 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 19px;
+
+        &:hover {
+          background-color: #FAFAFA;
+        }
+      }
+
+      &-item {
+        &:first-child {
+          width: 220px;
+        }
+
+        &.value {
+          margin-right: auto;
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        &:last-child {
+          i {
+            margin-right: 15px;
+          }
+        }
+
+        input {
+          max-width: 440px;
+        }
+
+        &-save {
+          color: #003DA5;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 24px;
+          text-transform: uppercase;
+        }
+
+        &-cancel {
+          color: #A6A6A6;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 24px;
+          margin-right: 20px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

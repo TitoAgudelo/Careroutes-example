@@ -1,0 +1,109 @@
+.button {
+  &-primary {
+    background-color: $primary_blue;
+    border: 1px solid $primary_blue;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 18px 36px;
+
+    .text {
+      color: $white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      background-color: $secondary_blue;
+      border-color: $secondary_blue;
+    }
+
+    &:active, &.active {
+      background-color: $alternative_blue;
+      border-color: $alternative_blue;
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    border: 1px solid $black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 18px 36px;
+
+    .text {
+      color: $black;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      background-color: $secondary_gray;
+      border-color: $black;
+    }
+
+    &:active, &.active {
+      background-color: $light_gray;
+      border-color: $black;
+    }
+  }
+
+  &-small {
+    &-primary {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 18px 36px;
+
+      .text {
+        color: $primary_blue;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        .text {
+          color: $secondary_blue;
+        }
+      }
+
+      &:active, &.active {
+        .text {
+          color: $alternative_blue;
+        }
+      }
+    }
+
+    &-secondary {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 18px 36px;
+
+      .text {
+        color: $gray;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        .text {
+          color: $alternative_gray;
+        }
+      }
+
+      &:active, &.active {
+        .text {
+          color: $optional_gray;
+        }
+      }
+    }
+  }
+}

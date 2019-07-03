@@ -1,0 +1,207 @@
+$colors : (
+	'dark' : #000,
+
+	'light' : #fff,
+	'light-dark' : #efefef,
+
+	'alt' : #7F7F7F,
+	'alt-light' : #808080,
+	'alt-lightest' : #8E8E8E,
+
+
+	'red' : #e62932,
+	'highlight' : #e62932,
+	'subhighlight' : lighten(#e62932, 3%),
+
+	'good' : #5fb810,
+	'bad' : #e62932,
+);
+
+$letter-spacing : (
+	'more' : 1px,
+	'default' : auto,
+	'less' : -.5px,
+	'link' : -1px,
+	'little' : -1.5px,
+	'compact' : -2.5px
+);
+
+$font-size : (
+	'small' : 12px,
+	'default' : 14px,
+	'emphasis' : 16px,
+	'h4' : 20px,
+	'h3' : 24px,
+	'h2' : 36px,
+	'title' : 64px
+);
+
+$font-weight : (
+	'thin' : 100,
+	'light' : 300,
+	'default' : 400,
+	'medium' : 500,
+	'bold' : 700
+);
+
+$font-family : (
+	'default' : 'Avenir',
+	'alt' : 'Conduit'
+);
+
+$document: (
+	'background' : map-get($colors, 'light-dark'),
+
+	'line-height' : normal,
+	'font-family' : 'Avenir',
+	'font-size' : map-get($font-size, 'default'),
+	'font-weight' : map-get($font-weight, 'default'),
+
+	'min-width' : 100%,
+	'max-width' : 100vw,
+	'min-height' : 100vh,
+	'max-height' : none,
+
+	'max-content-width' : 1280px,
+	'max-site-width' : 1440px,
+
+	'overflow' : hidden
+);
+
+$border-color: (
+	'default' : #eaeaea,
+	'on-dark' : #eaeaea,
+
+	'light' : #fff,
+
+	'on-light' : #979797,
+	'dark' : #979797,
+
+	'highlight' : map-get($colors, 'highlight'),
+
+	'light-dark': map-get($colors, 'light-dark')
+);
+
+$font-color: (
+	'default' : map-get($colors, 'dark'),
+
+	'alt' : map-get($colors, 'alt'),
+	'alt-on-light' : map-get($colors, 'alt'),
+	'alt-on-dark' : map-get($colors, 'alt-light'),
+	'alt-on-gray' : map-get($colors, 'alt-lightest'),
+
+	'light' : map-get($colors, 'light'),
+	'on-dark' : map-get($colors, 'light'),
+
+	'on-light' : map-get($colors, 'dark'),
+	'dark' : map-get($colors, 'dark'),
+	'light-dark': map-get($colors, 'light-dark'),
+
+	'highlight' : map-get($colors, 'highlight'),
+	'highlight-light' : lighten(map-get($colors, 'highlight'), 10%),
+
+	'bad' : map-get($colors, 'bad'),
+);
+
+
+
+//helper mixins
+@mixin font-weight($weight) {
+	@if type-of($weight) == 'string' {
+		font-weight: map-get($font-weight, $weight);
+	} @else {
+		font-weight: $weight;
+	}
+}
+
+@mixin font-size($size) {
+	@if type-of($size) == 'string' {
+		font-size: map-get($font-size, $size);
+	} @else {
+		font-size: $size;
+	}
+}
+
+@mixin letter-spacing($size) {
+	@if type-of($size) == 'string' {
+		letter-spacing: map-get($letter-spacing, $size);
+	} @else {
+		letter-spacing: $size;
+	}
+}
+
+@mixin font-color($color) {
+	@if type-of($color) == 'string' {
+		color: map-get($font-color, $color);
+	} @else {
+		color: $color;
+	}
+}
+
+@mixin font-family($family:'default') {
+	@if type-of($family) == 'string' {
+		font-family: map-get($font-family, $family), 'Sans-Serif';
+	}
+}
+
+@mixin text($size:inherit, $color:inherit, $weight:inherit, $family:'', $transform:'', $spacing:'') {
+	@if $size != "" {
+		@include font-size($size);
+	}
+
+	@if $color != "" {
+		@include font-color($color);
+	}
+
+	@if $weight != "" {
+		@include font-weight($weight);
+	}
+
+	@if $family != "" {
+		@include font-family($family);
+	}
+
+	@if $transform != "" {
+		text-transform: $transform;
+	}
+
+	@if $spacing != "" {
+		@include letter-spacing($spacing);
+	}
+}
+
+@mixin border($color:default, $location:'', $size:1px, $type:solid) {
+	$border: '';
+
+	@if $location != "" {
+		$border : 'border-'+$location;
+	} @else {
+		$border : 'border';
+	}
+
+	@if $color != transparent {
+		@if type-of($color) == 'string' {
+			$color : map-get($border-color, $color);
+		} @else {
+			$color : $color;
+		}
+	}
+
+	#{$border}: $size $type $color;
+}
+
+@mixin background-color($color) {
+	@if type-of($color) == 'string' {
+		background-color: map-get($colors, $color);
+	} @else {
+		background-color: $color;
+	}
+}
+
+@mixin gradient($direction, $color1, $color2) {
+	@include linear-gradient($direction, map-get($colors, $color1) 0%, map-get($colors, $color2) 100%);
+}
+
+@mixin default-box-shadow {
+	@include box-shadow(0 0 7px rgba(0,0,0,.25));
+}

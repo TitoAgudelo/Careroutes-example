@@ -1,0 +1,223 @@
+/***************************** Simple table ******************************/
+
+table {
+  border: none;
+  max-width: 100%;
+  padding: 1rem 0;
+  text-align: left;
+  width: 100%;
+
+  thead {
+    th {
+      cursor: pointer;
+      padding: 11px 0;
+
+      span {
+        color: $body_black;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 19px;
+        margin-right: 5px;
+      }
+
+      i {
+        color: $body_black;
+        font-size: 12px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      cursor: pointer;
+
+      &:first-child {
+        td {
+          border-top: 1px solid $light_gray;
+        }
+      }
+
+      &:hover {
+        background-color: $secondary_white;
+      }
+    }
+
+    td {
+      border-bottom: 1px solid $light_gray;
+      color: $body_black;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      line-height: 19px;
+      width: 180px;
+      padding: 22px 0;
+
+      &:first-child {
+        font-weight: bold;
+      }
+
+      &:last-child {
+        text-align: right;
+        width: auto;
+
+        i {
+          margin-right: 22px;
+        }
+      }
+
+      i {
+        color: #A6A6A6;
+      }
+    }
+  }
+}
+
+/***************************** ReactTable ******************************/
+
+.ReactTable {
+  border: none;
+  color: #4e4e4e;
+  margin: 1rem 0;
+
+  .rt {
+    &-table {
+      border: none;
+      max-width: 100%;
+      padding: 0;
+      text-align: left;
+    }
+
+    &-tr {
+      padding: 22px 0;
+    }
+
+    &-td {
+      padding: 0;
+    }
+
+    &-th {
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-thead {
+      border-bottom: 1px solid $light_gray;
+
+      .rt-tr {
+        padding: 0;
+
+        span {
+          color: $body_black;
+          font-family: 'Roboto', sans-serif;
+          font-size: 16px;
+          font-weight: normal;
+          line-height: 19px;
+          margin-right: 5px;
+        }
+
+        i {
+          color: $body_black;
+          font-size: 12px;
+        }
+      }
+    }
+
+    &-tbody {
+      .rt-tr-group:first-child {
+
+      }
+
+      .rt-tr-group {
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary_white;
+        }
+
+        .rt-tr {
+          .rt-td {
+            &:first-child {
+              font-weight: bold;
+            }
+
+            .detail {
+              color: #D8D8D8;
+              font-family: 'Roboto';
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 19px;
+            }
+
+            i {
+              margin-left: 8px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+/***************************** Pagination ******************************/
+
+.Table__itemCount {
+  /* margin-top: 10px; */
+  font-size: 14px;
+}
+
+.Table__pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 10px;
+}
+
+.Table__pageButton {
+  font-size: 15px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.Table__pageButton:disabled {
+  cursor: not-allowed;
+  color: gray;
+}
+
+.Table__pageButton--active {
+  color: #45b3e3;
+  font-weight: bold;
+}
+
+.Table__pageButton {
+  border: 1px solid #bbbbbb;
+  color: #838383;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 8px 10px;
+
+  &.Table__pageButton--active {
+    background-color: #efefef;
+    font-weight: bold;
+  }
+}
+
+.Table__visiblePagesWrapper {
+  .Table__pageButton {
+    border-right: 0;
+  }
+}
+
+.Table__prevPageWrapper .Table__pageButton {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 0;
+}
+
+.Table__nextPageWrapper .Table__pageButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

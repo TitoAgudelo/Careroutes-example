@@ -1,0 +1,127 @@
+.app {
+  &-aside {
+    -webkit-box-pack: justify;
+
+    display: flex;
+    background-color: #002542;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    margin-top: 60px;
+    transform: translateX(-100%);
+    transform: translateX(0px);
+    transition: all .3s ease 0s;
+    overflow: hidden;
+    position: fixed;
+    width: 70px;
+    z-index: 200;
+
+    &-search {
+      background-color: #00060A;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      margin: 10px 14px;
+      padding: 12px 12px;
+      position: relative;
+
+      i {
+        color: #D8D8D8;
+        font-size: 18px;
+      }
+
+      input {
+        background-color: #00060A;
+        border: 0;
+        border-radius: 25px;
+        color: #F9F9F9;
+        display: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 15px 10px 15px 50px;
+        width: 100%;
+
+        &:focus {
+          border: 0;
+          outline: none;
+        }
+      }
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        border-bottom: 1px solid #8A8A8A;
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 50px;
+        width: 70px;
+
+        &:first-child {
+          border-top: 1px solid #8A8A8A;
+        }
+
+        &-inside {
+          align-items: center;
+          display: flex;
+          padding: 15px 25px;
+          text-decoration: none;
+        }
+
+        i {
+          color: #D8D8D8;
+          font-size: 18px;
+        }
+
+        span {
+          color: #D8D8D8;
+          display: none;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          line-height: 18px;
+        }
+      }
+    }
+
+    &.expanded {
+      width: 238px;
+
+      .app-aside-search {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 5px;
+
+        i {
+          left: 20px;
+          position: absolute;
+          top: 14px;
+        }
+
+        input {
+          display: flex;
+
+          &::placeholder {
+            color: #F9F9F9;
+          }
+        }
+      }
+
+      .app-aside-menu-item {
+        width: 238px;
+
+        &-inside {
+          i {
+            margin-right: 25px;
+          }
+
+          span {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.app {
+  &-content {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    margin-top: 0;
+    overflow: hidden auto;
+    transition: all 0.15s ease 0s;
+    width: 100%;
+
+    &.full {
+      margin-left: 0;
+    }
+
+    &.expanded {
+      margin-left: 238px;
+    }
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

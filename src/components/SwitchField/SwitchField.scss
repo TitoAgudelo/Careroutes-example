@@ -1,0 +1,63 @@
+.care-switch {
+  position: relative;
+
+  &-label {
+    color: #A1A1A1;
+    display: block;
+    flex-shrink: 0;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    user-select: none;
+    position: relative;
+  }
+
+  &-inner {
+    display: inline-flex;
+    position: relative;
+  }
+
+  &-field {
+    cursor: pointer;
+    flex-shrink: 0;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    z-index: 4;
+  }
+
+  &-checkbox {
+    background-color: #A1A1A1;
+    border: none;
+    border-radius: 18px;
+    box-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    position: relative;
+    transition: all 0.15s ease 0s;
+    width: 34px;
+    z-index: 1;
+
+    .inner {
+      border-radius: 100%;
+      background-color: #A1A1A1;
+      box-shadow: rgb(47, 50, 61) 0px 1px 1px 0px;
+      height: 20px;
+      left: 0;
+      position: absolute;
+      transition: all 350ms cubic-bezier(0, 0.89, 0.44, 1);
+      top: -3px;
+      width: 20px;
+    }
+
+    &.checked {
+      background-color: #002542;
+
+      .inner {
+        background: #002542;
+        left: 14px;
+      }
+    }
+  }
+}

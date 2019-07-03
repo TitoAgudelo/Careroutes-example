@@ -1,0 +1,83 @@
+.waypoints {
+  &-list {
+    padding: 0;
+
+    &-item {
+      border-bottom: 1px solid #d8d8d8;
+      cursor: pointer;
+      padding: 15px 0;
+
+      &:first-child {
+        border-top: 1px solid #d8d8d8;
+      }
+
+      &-wrapper {
+        align-items: center;
+        display: flex;
+      }
+
+      &-type {
+        background-color: #e6e6e6;
+        border-radius: 3px;
+        color: #4e4e4e;
+        margin-right: 50px;
+        padding: 12px;
+        text-transform: capitalize;
+        width: 80px;
+      }
+
+      &-time {
+        color: #4e4e4e;
+        font-weight: bold;
+        margin-right: 62px;
+      }
+
+      &-drag {
+        margin-left: auto;
+        padding-right: 25px;
+
+        i {
+          color: #ABABAB;
+        }
+      }
+    }
+  }
+
+  &-actions {
+    background-color: #F9F9F9;
+    margin-top: 15px;
+
+    &-item {
+      padding: 15px 0;
+
+      &-type {
+        border-radius: 5px;
+        color: #4e4e4e;
+        margin-right: 50px;
+        padding: 10px;
+        text-transform: capitalize;
+        width: 80px;
+      }
+
+      &-name {
+        color: #4e4e4e;
+        width: 120px;
+      }
+
+      &-bask {
+        cursor: pointer;
+        margin-left: auto;
+        padding-right: 25px;
+      }
+
+      i {
+        color: #ABABAB;
+      }
+    }
+
+    &-wrapper {
+      align-items: center;
+      display: flex;
+    }
+  }
+}
